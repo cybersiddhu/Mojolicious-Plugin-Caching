@@ -3,6 +3,7 @@ use strict;
 
 use CHI;
 use Carp;
+use Scalar::Util qw/blessed/;
 use base qw/Mojolicious::Plugin/;
 
 # Module implementation
@@ -26,7 +27,7 @@ sub register {
     #setup cache
     if ( !$cache ) {
         if ( defined $conf->{cache_object} ) {
-            croak "not a CHI object\n" if !$conf->{cache_object}->isa('CHI');
+            croak "not a CHI object\n" if !blessed $conf->{cache_object};
             $cache = $conf->{cache_object};
         }
         elsif ( defined $conf->{cache_options} ) {
