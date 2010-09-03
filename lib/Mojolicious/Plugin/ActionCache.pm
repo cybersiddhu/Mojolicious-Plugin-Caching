@@ -46,7 +46,7 @@ sub register {
         }
     }
 
-    if ( $conf->{debug} ) {
+    if ( $app->log->level eq 'debug' ) {
         $cache->on_set_error('log');
         $cache->on_get_error('log');
     }
@@ -56,9 +56,7 @@ sub register {
             my ( $self, $c ) = @_;
             my $path = $c->tx->req->url->path->to_string;
             if ( $cache->is_valid($path) ) {
-                $app->log->debug("serving from cache for $path")
-                    if $conf->{debug};
-
+                $app->log->debug("serving from cache for $path");
                 my $data = $cache->get($path);
                 $c->res->code( $data->{code} );
                 $c->res->headers( $data->{headers} );
@@ -80,8 +78,7 @@ sub register {
                 if defined $conf->{cache_actions}
                     and not exists $actions->{$name};
 
-            $app->log->debug("storing in cache for $path and action $name")
-                if $conf->{debug};
+            $app->log->debug("storing in cache for $path and action $name");
             $cache->set(
                 $path,
                 {   body    => $c->res->body,
@@ -98,3 +95,12 @@ sub register {
 __END__
 
 # ABSTRACT: Mojolicious plugin for caching response using CHI module
+
+
+=head1 SYNOPSIS
+
+#Mojolicious
+ $self->plugin('actioncache');
+
+#Mojolicious::Lite
+  plugin 'actioncache';
