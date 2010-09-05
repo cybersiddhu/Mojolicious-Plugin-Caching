@@ -2,6 +2,8 @@ package Book;
 
 use strict;
 use base 'Mojolicious';
+use File::Spec::Functions;
+use Module::Build;
 
 # This method will run once at server start
 sub startup {
@@ -10,8 +12,11 @@ sub startup {
     # Routes
     my $r = $self->routes;
 
+    my $build = Module::Build->current;
+    my $cache_dir = catdir( $build->base_dir, 't', 'tmp', 'cache' );
+
     $self->plugin( 'actioncache',
-        { cache_option => { root_dir => $self->home->rel_dir('cache') } } );
+        { cache_options => { root_dir => $cache_dir } } );
 
     my $books = $r->route('/books')->to('controller-cache#books');
 }

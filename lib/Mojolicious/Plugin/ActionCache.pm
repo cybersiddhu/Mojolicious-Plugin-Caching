@@ -1,6 +1,7 @@
 package Mojolicious::Plugin::Actioncache;
-use strict;
 
+use warnings;
+use strict;
 use CHI;
 use Carp;
 use Scalar::Util qw/blessed/;
@@ -31,12 +32,9 @@ sub register {
             $cache = $conf->{cache_object};
         }
         elsif ( defined $conf->{cache_options} ) {
-            $cache = CHI->new( %{ $conf->{cache_options} } );
-            if ( !$cache->driver ) {
-                $cache->driver( $self->driver );
-                $cache->root_dir
-                    || $cache->root_dir( $self->root_dir );
-            }
+        	my $opt = $conf->{cache_options};
+        	$opt->{driver} = $self->driver if not defined $opt->{driver};
+            $cache = CHI->new( %$opt );
         }
         else {
             $cache = CHI->new(
@@ -71,6 +69,9 @@ sub register {
             my ( $self, $c ) = @_;
             return if $c->stash('from_cache');
 
+            #only successful response
+            return if $c->res->code != 200;
+
             my $path = $c->url_for->path->to_string;
             my $name = $c->stash('action');
 
@@ -88,6 +89,8 @@ sub register {
             );
         }
     );
+
+    return;
 }
 
 1;
