@@ -67,14 +67,21 @@ sub register {
     $app->plugins->add_hook(
         'after_dispatch' => sub {
             my ( $self, $c ) = @_;
+
+            #conditions at which no caching will be done
+            ## - it is already a cached response
             return if $c->stash('from_cache');
 
-            #only successful response
+            ## - has to be GET request
+            return if $c->req->method ne 'GET';
+
+            ## - only successful response
             return if $c->res->code != 200;
 
             my $path = $c->url_for->path->to_string;
             my $name = $c->stash('action');
 
+			## - have to match the action
             return
                 if defined $conf->{cache_actions}
                     and not exists $actions->{$name};
