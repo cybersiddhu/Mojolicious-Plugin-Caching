@@ -13,13 +13,10 @@ use base qw/Mojolicious::Plugin/;
 my $cache;
 my $actions;
 
-__PACKAGE__->attr( 'driver' => 'File' );
-__PACKAGE__->attr('root_dir');
+__PACKAGE__->attr( 'driver' => 'Memory' );
 
 sub register {
     my ( $self, $app, $conf ) = @_;
-
-    $self->root_dir( $app->home->rel_dir('cache') );
 
     if ( defined $conf->{cache_actions} ) {
         $actions = { map { $_ => 1 } @{ $conf->{cache_actions} } };
@@ -27,19 +24,14 @@ sub register {
 
     #setup cache
     if ( !$cache ) {
-        if ( defined $conf->{cache_object} ) {
-            croak "not a CHI object\n" if !blessed $conf->{cache_object};
-            $cache = $conf->{cache_object};
-        }
-        elsif ( defined $conf->{cache_options} ) {
+        if ( defined $conf->{cache_options} ) {
             my $opt = $conf->{cache_options};
             $opt->{driver} = $self->driver if not defined $opt->{driver};
             $cache = CHI->new(%$opt);
         }
         else {
             $cache = CHI->new(
-                driver   => $self->driver,
-                root_dir => $self->root_dir
+                driver   => $self->driver
             );
         }
     }
@@ -105,13 +97,77 @@ sub register {
 
 __END__
 
-# ABSTRACT: Mojolicious plugin for caching response using CHI module
+# ABSTRACT: Mojolicious plugin for caching response
 
 
 =head1 SYNOPSIS
 
 #Mojolicious
- $self->plugin('actioncache');
+ $self->plugin('caching-actions');
 
 #Mojolicious::Lite
-  plugin 'actioncache';
+  plugin 'caching-actions';
+
+
+=head1 DESCRIPTION
+
+This plugin caches responses of mojolicious applications. It works by caching the entire
+output of controller action for every request that goes through it. Action caching internally uses
+the I<before_dispatch> hook to serve the response if cache is present and the entire
+controller body is skipped. If absent the output is cached in an I<after_dispatch> hook. 
+
+The cache is named according to the current host and path. So,  the cache will
+differentiate between an identical page that is accessed from B<tucker.myplace.com/user/2>
+and from B<caboose.myplace.com/user/2> 
+
+Different representation of the same resource such as B<tucker.myplace.com/book/list> and
+B<tucker.myplace.com/book/list.json> are considered as separate requests and so are
+cached separately.
+
+
+=head2 Backend 
+
+This plugin uses L<http://http://search.cpan.org/~jswartz/CHI|CHI> for caching responses.
+So,  all the various cache backends and customization options are supported here. By
+default,  this plugin uses the B<Memory> cache backend.
+
+=head2 Options
+
+=over
+
+=item cache_actions
+
+ cache_actions => [qw/action1 action2 ....]
+
+ #Mojolicious::Lite 
+ plugin caching-actions => { cache_actions => [qw/user show/]}; 
+
+ By default,  all actions with successful GET requests will be cached
+ 
+=item cache_options
+
+  cache_options =>  \%options
+  All CHI module options are recognized
+
+  #Mojolicious lite using memcache 
+  plugin caching-actions => {
+     cache_options => {
+       driver => 'Memcached',  
+       servers => [ "10.0.0.15:11211",  "10.0.0.15:11212" ] 
+     }
+  } 
+
+  #Mojolicious lite using file based storage
+  plugin caching-actions => {
+     cache_options => {
+       driver => 'File',  
+       root_dir => '/path/to/cache' 
+     }
+  } 
+
+
+  By default,  the B<Memory> driver is used.
+
+=back
+
+

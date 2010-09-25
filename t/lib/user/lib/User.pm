@@ -17,7 +17,11 @@ sub startup {
 
     $self->plugin(
         'caching-actions',
-        {   cache_options => { root_dir => $cache_dir, namespace => 'user' },
+        {   cache_options => {
+                root_dir  => $cache_dir,
+                namespace => 'user',
+                driver    => 'File'
+            },
             cache_actions => [qw/users show/]
         }
     );
@@ -26,7 +30,8 @@ sub startup {
     $r->route('/user/:id')->via('delete')->to('controller-cache#remove_user');
     my $books
         = $r->waypoint('/user')->via('get')->to('controller-cache#users');
-    my $more = $books->waypoint('/:id')->via('get')->to('controller-cache#show');
+    my $more
+        = $books->waypoint('/:id')->via('get')->to('controller-cache#show');
     $more->route('/email')->via('get')->to('controller-cache#email');
     $more->route('/name')->via('get')->to('controller-cache#name');
 }
