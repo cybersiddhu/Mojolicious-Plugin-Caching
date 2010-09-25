@@ -1,7 +1,7 @@
 package Mojolicious::Plugin::Actioncache;
 
-use warnings;
 use strict;
+use warnings;
 use CHI;
 use Carp;
 use Scalar::Util qw/blessed/;
@@ -32,9 +32,9 @@ sub register {
             $cache = $conf->{cache_object};
         }
         elsif ( defined $conf->{cache_options} ) {
-        	my $opt = $conf->{cache_options};
-        	$opt->{driver} = $self->driver if not defined $opt->{driver};
-            $cache = CHI->new( %$opt );
+            my $opt = $conf->{cache_options};
+            $opt->{driver} = $self->driver if not defined $opt->{driver};
+            $cache = CHI->new(%$opt);
         }
         else {
             $cache = CHI->new(
@@ -52,7 +52,8 @@ sub register {
     $app->plugins->add_hook(
         'before_dispatch' => sub {
             my ( $self, $c ) = @_;
-            my $path = $c->tx->req->url->path->to_string;
+            my $path = $c->tx->req->url->to_abs->to_string;
+            $app->log->debug( ref $path );
             if ( $cache->is_valid($path) ) {
                 $app->log->debug("serving from cache for $path");
                 my $data = $cache->get($path);
@@ -78,10 +79,10 @@ sub register {
             ## - only successful response
             return if $c->res->code != 200;
 
-            my $path = $c->url_for->path->to_string;
+            my $path = $c->req->url->to_abs->to_string;
             my $name = $c->stash('action');
 
-			## - have to match the action
+            ## - have to match the action
             return
                 if defined $conf->{cache_actions}
                     and not exists $actions->{$name};
