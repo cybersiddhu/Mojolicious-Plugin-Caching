@@ -97,7 +97,7 @@ sub register {
 
 __END__
 
-# ABSTRACT: Mojolicious plugin for caching response
+# ABSTRACT: Mojolicious plugin for caching
 
 
 =head1 SYNOPSIS
