@@ -127,7 +127,7 @@ cached separately.
 
 =head2 Backend 
 
-This plugin uses L<http://http://search.cpan.org/~jswartz/CHI|CHI> for caching responses.
+This plugin uses B<CHI> L<http://http://search.cpan.org/~jswartz/CHI> for caching responses.
 So,  all the various cache backends and customization options are supported here. By
 default,  this plugin uses the B<Memory> cache backend.
 
