@@ -16,7 +16,7 @@ sub startup {
     my $cache_dir = catdir( $build->base_dir, 't', 'tmp', 'cache' );
 
     $self->plugin(
-        'cache-action',
+        'caching-actions',
         {   cache_options => { root_dir => $cache_dir, namespace => 'user' },
             cache_actions => [qw/users show/]
         }

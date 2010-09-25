@@ -1,4 +1,4 @@
-package Mojolicious::Plugin::Cache::Action;
+package Mojolicious::Plugin::Caching::Actions;
 
 use strict;
 use warnings;
