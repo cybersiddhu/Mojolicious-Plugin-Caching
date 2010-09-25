@@ -9,7 +9,7 @@ use lib "$FindBin::Bin/lib/book/lib";
 use lib "$FindBin::Bin/lib/user/lib";
 
 BEGIN {
-    #$ENV{MOJO_LOG_LEVEL} ||= 'fatal';
+    $ENV{MOJO_LOG_LEVEL} ||= 'fatal';
 }
 
 

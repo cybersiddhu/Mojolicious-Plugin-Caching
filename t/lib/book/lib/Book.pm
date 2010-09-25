@@ -15,7 +15,7 @@ sub startup {
     my $build = Module::Build->current;
     my $cache_dir = catdir( $build->base_dir, 't', 'tmp', 'cache' );
 
-    $self->plugin( 'actioncache',
+    $self->plugin( 'cache-action',
         { cache_options => { root_dir => $cache_dir } } );
 
     my $books = $r->route('/books')->to('controller-cache#books');
