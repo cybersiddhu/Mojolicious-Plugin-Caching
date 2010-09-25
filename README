@@ -1,6 +1,6 @@
 =head1 NAME
 
-B<Mojolicious::Plugin::Caching::Actions> - Mojolicious plugin for caching
+B<Mojolicious::Plugin::Caching> - Mojolicious plugin for caching
 
 =head1 SYNOPSIS
 
