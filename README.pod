@@ -16,7 +16,8 @@ B<Mojolicious::Plugin::Caching> - Mojolicious plugin for caching
 This plugin caches responses of mojolicious applications. It works by caching the entire
 output of controller action for every request that goes through it. Action caching internally uses
 the I<before_dispatch> hook to serve the response if cache is present and the entire
-controller body is skipped. If absent the output is cached in an I<after_dispatch> hook. 
+controller body is skipped. If absent the output is cached in an I<after_dispatch> hook.
+It caches only successfulI<HTTP 200> GET responses.
 
 The cache is named according to the current host and path. So,  the cache will
 differentiate between an identical page that is accessed from B<tucker.myplace.com/user/2>
@@ -25,6 +26,8 @@ and from B<caboose.myplace.com/user/2>
 Different representation of the same resource such as B<tucker.myplace.com/book/list> and
 B<tucker.myplace.com/book/list.json> are considered as separate requests and so are
 cached separately.
+
+
 
 
 =head2 Backend 
@@ -67,9 +70,9 @@ default,  this plugin uses the B<Memory> cache backend.
      }
   } 
 
-
-  By default,  the B<Memory> driver is used.
-
 =back
+
+By default,  the B<Memory> driver is used.
+
 
 
