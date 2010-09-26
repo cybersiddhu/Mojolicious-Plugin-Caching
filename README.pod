@@ -4,10 +4,10 @@ B<Mojolicious::Plugin::Caching> - Mojolicious plugin for caching
 
 =head1 SYNOPSIS
 
-#Mojolicious
+ #Mojolicious
  $self->plugin('caching-actions');
 
-#Mojolicious::Lite
+ #Mojolicious::Lite
   plugin 'caching-actions';
 
 
