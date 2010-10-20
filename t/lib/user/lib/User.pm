@@ -16,13 +16,13 @@ sub startup {
     my $cache_dir = catdir( $build->base_dir, 't', 'tmp', 'cache' );
 
     $self->plugin(
-        'caching-actions',
-        {   cache_options => {
+        'cache-action',
+        {   options => {
                 root_dir  => $cache_dir,
                 namespace => 'user',
                 driver    => 'File'
             },
-            cache_actions => [qw/users show/]
+            actions => [qw/users show/]
         }
     );
 
