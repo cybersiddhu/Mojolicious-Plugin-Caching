@@ -2,7 +2,7 @@ NAME
     Mojolicious::Plugin::Cache::Action - Mojolicious plugin for caching
 
 VERSION
-    version 0.002
+    version 0.001
 
 SYNOPSIS
     #Mojolicious $self->plugin('cache-action');
