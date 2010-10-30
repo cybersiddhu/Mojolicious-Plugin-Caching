@@ -1,0 +1,85 @@
+NAME
+    Mojolicious::Plugin::Cache::Action - Mojolicious plugin for caching
+
+VERSION
+    version 0.002
+
+SYNOPSIS
+    #Mojolicious $self->plugin('cache-action');
+
+    #Mojolicious::Lite plugin 'cache-action';
+
+DESCRIPTION
+    This plugin caches responses of mojolicious applications. It works by
+    caching the entire output of controller action for every request. Action
+    caching internally uses the *before_dispatch* hook to serve the response
+    from cache by skipping the entire controller body. Uncached responses
+    are cached in an *after_dispatch* hook.
+
+    The cache is named according to the current host and path. So, the cache
+    will differentiate between an identical page that is accessed from
+    tucker.myplace.com/user/2 and from caboose.myplace.com/user/2
+
+    Different representation of the same resource such as
+    tucker.myplace.com/book/list and tucker.myplace.com/book/list.json are
+    considered as separate requests and so are cached separately.
+
+  Cache backends
+    This plugin uses CHI <http://http://search.cpan.org/~jswartz/CHI> for
+    caching responses. So, all the various cache backends and customization
+    options of CHI are supported. By default, this plugin uses the Memory
+    <http://search.cpan.org/~jswartz/CHI-0.36/lib/CHI/Driver/Memory.pm>
+    cache backend. Various other backends
+
+    *   <http://search.cpan.org/~jswartz/CHI-0.36/lib/CHI/Driver/File.pm|Fil
+        e>
+
+    *   <http://search.cpan.org/~jswartz/CHI-0.36/lib/CHI/Driver/FastMmap.pm
+        |FastMmap>
+
+    *   <http://search.cpan.org/~jswartz/CHI-Driver-Memcached-0.12/lib/CHI/D
+        river/Memcached.pm|Memcached>
+
+    *   <http://search.cpan.org/~jswartz/CHI-Driver-BerkeleyDB-0.03/lib/CHI/
+        Driver/BerkeleyDB.pm|BerkeleyDB>
+
+    are also available through CHI.
+
+  Options
+    actions
+         actions => [qw/action1 action2 ....]
+
+         #Mojolicious::Lite 
+         plugin caching-actions => { cache_actions => [qw/user show/]}; 
+
+         By default,  all actions with successful GET requests will be cached
+
+    options
+          options =>  \%options
+          All CHI module options are recognized
+
+          #Mojolicious lite using memcache 
+          plugin caching-actions => {
+             cache_options => {
+               driver => 'Memcached',  
+               servers => [ "10.0.0.15:11211",  "10.0.0.15:11212" ] 
+             }
+          } 
+
+          #Mojolicious lite using file based storage
+          plugin caching-actions => {
+             cache_options => {
+               driver => 'File',  
+               root_dir => '/path/to/cache' 
+             }
+          }
+
+AUTHOR
+    Siddhartha Basu <biosidd@gmail.com>
+
+COPYRIGHT AND LICENSE
+    This software is copyright (c) 2010 by Siddhartha Basu.
+
+    This is free software; you can redistribute it and/or modify it under
+    the same terms as the Perl 5 programming language system itself.
+
