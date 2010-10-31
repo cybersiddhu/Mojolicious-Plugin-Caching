@@ -9,21 +9,18 @@ use base qw/Mojolicious::Plugin/;
 # Module implementation
 #
 
-__PACKAGE__->attr('cache_directory');
-
 sub register {
     my ( $self, $app, $conf ) = @_;
 
     my $home = $app->home;
-    $self->cache_directory(
-        -e $app->home->rel_dir('public')
+    my $cache_dir
+        = -e $app->home->rel_dir('public')
         ? $app->home->rel_dir('public')
-        : $home->to_string
-    );
+        : $home->to_string;
 
     #if given as an option
     if ( defined $conf->{cache_directory} ) {
-        $self->cache_direcotry( $conf->{cache_directory} );
+        $cache_dir = $conf->{cache_directory};
     }
 
     my $actions;
@@ -50,21 +47,21 @@ sub register {
                 if defined $conf->{actions}
                     and not exists $actions->{$name};
 
-            my @parts = $c->req->url->path->parts;
+            my $parts = $c->req->url->path->parts;
             my $file_name;
-            if ( @parts == 1 ) {
-                $file_name
-                    = catfile( $self->cache_direcroty, $parts[0] . '.html' );
+            if ( @$parts == 1 ) {
+                $file_name = catfile( $cache_dir, $parts->[0] . '.html' );
             }
             else {
-                my $end    = pop @parts;
-                my $folder = make_path(
-                    catdir( $self->cache_direcotry, join( ', ', @parts ) ) );
+                my $end = pop @$parts;
+                my $folder = $cache_dir;
+                $folder = catdir($folder, $_) for @$parts;
+                make_path( $folder );
                 $file_name = catfile( $folder, $end . '.html' );
             }
 
             $app->log->debug(
-                "storing in cache for action $name in file $file_name");
+                "storing in cache for action **$name** in file $file_name");
 
             my $handler = IO::File->new( $file_name, 'w' )
                 or croak "cannot create file:$!";
