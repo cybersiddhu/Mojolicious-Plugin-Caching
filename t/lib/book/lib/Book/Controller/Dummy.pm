@@ -2,12 +2,11 @@ package Book::Controller::Dummy;
 
 use strict;
 
-
 # Other modules:
 
 sub dummy {
-	my $self = shift;
-	$self->render_text($self->stash('cached_data'));
+    my $self = shift;
+    $self->render_text( $self->stash('cached_data') );
 }
 
 # Module implementation
@@ -221,6 +220,3 @@ A list of all the other modules that this module relies upon,
 		  FAILURE OF THE SOFTWARE TO OPERATE WITH ANY OTHER SOFTWARE), EVEN IF
   SUCH HOLDER OR OTHER PARTY HAS BEEN ADVISED OF THE POSSIBILITY OF
   SUCH DAMAGES.
-
-
-

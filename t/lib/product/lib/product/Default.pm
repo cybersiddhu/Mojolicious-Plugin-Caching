@@ -15,7 +15,7 @@ sub type {
     my $self = shift;
 
     # render default/type.html.ep
-    $self->render( message => 'we have '.$self->stash('type') );
+    $self->render( message => 'we have ' . $self->stash('type') );
 }
 
 sub show {

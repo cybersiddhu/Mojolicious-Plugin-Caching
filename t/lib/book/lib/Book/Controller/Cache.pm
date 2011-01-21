@@ -2,7 +2,6 @@ package Book::Controller::Cache;
 
 use strict;
 
-
 # Other modules:
 use base qw/Mojolicious::Controller/;
 
@@ -10,8 +9,8 @@ use base qw/Mojolicious::Controller/;
 #
 
 sub books {
-	my $self = shift;
-	$self->render_text('books');
+    my $self = shift;
+    $self->render_text('books');
 }
 
 1;    # Magic true value required at end of module
@@ -222,6 +221,3 @@ A list of all the other modules that this module relies upon,
 		  FAILURE OF THE SOFTWARE TO OPERATE WITH ANY OTHER SOFTWARE), EVEN IF
   SUCH HOLDER OR OTHER PARTY HAS BEEN ADVISED OF THE POSSIBILITY OF
   SUCH DAMAGES.
-
-
-

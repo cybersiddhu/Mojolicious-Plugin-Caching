@@ -2,7 +2,6 @@ package User::Controller::Cache;
 
 use strict;
 
-
 # Other modules:
 use base qw/Mojolicious::Controller/;
 
@@ -10,35 +9,34 @@ use base qw/Mojolicious::Controller/;
 #
 
 sub users {
-	my $self = shift;
-	$self->render_text('users');
+    my $self = shift;
+    $self->render_text('users');
 }
 
 sub show {
-	my $self = shift;
-	$self->render_text('showing '. $self->stash('id'));
+    my $self = shift;
+    $self->render_text( 'showing ' . $self->stash('id') );
 }
 
 sub email {
-	my $self = shift;
-	$self->render_text('email '. $self->stash('id'));
+    my $self = shift;
+    $self->render_text( 'email ' . $self->stash('id') );
 }
 
 sub name {
-	my $self = shift;
-	$self->render_text('name '. $self->stash('id'));
+    my $self = shift;
+    $self->render_text( 'name ' . $self->stash('id') );
 }
 
 sub add {
-	my $self = shift;
-	$self->render_text('added '. $self->param('id'));
+    my $self = shift;
+    $self->render_text( 'added ' . $self->param('id') );
 }
 
 sub remove_user {
-	my $self = shift;
-	$self->render_text('deleted '. $self->stash('id'));
+    my $self = shift;
+    $self->render_text( 'deleted ' . $self->stash('id') );
 }
-
 
 1;    # Magic true value required at end of module
 
@@ -248,6 +246,3 @@ A list of all the other modules that this module relies upon,
 		  FAILURE OF THE SOFTWARE TO OPERATE WITH ANY OTHER SOFTWARE), EVEN IF
   SUCH HOLDER OR OTHER PARTY HAS BEEN ADVISED OF THE POSSIBILITY OF
   SUCH DAMAGES.
-
-
-

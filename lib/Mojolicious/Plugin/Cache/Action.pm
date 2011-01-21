@@ -1,5 +1,9 @@
 package Mojolicious::Plugin::Cache::Action;
 
+BEGIN {
+    $Mojolicious::Plugin::Cache::Action::VERSION = '0.001';
+}
+
 use strict;
 use warnings;
 use CHI;
@@ -29,9 +33,7 @@ sub register {
             $cache = CHI->new(%$opt);
         }
         else {
-            $cache = CHI->new(
-                driver   => $self->driver
-            );
+            $cache = CHI->new( driver => $self->driver );
         }
     }
 
@@ -94,10 +96,15 @@ sub register {
 
 1;
 
-__END__
+=pod
 
-# ABSTRACT: Mojolicious plugin for caching
+=head1 NAME
 
+Mojolicious::Plugin::Cache::Action - Mojolicious plugin for caching
+
+=head1 VERSION
+
+version 0.001
 
 =head1 SYNOPSIS
 
@@ -106,7 +113,6 @@ __END__
 
 #Mojolicious::Lite
   plugin 'cache-action';
-
 
 =head1 DESCRIPTION
 
@@ -122,7 +128,6 @@ and from B<caboose.myplace.com/user/2>
 Different representation of the same resource such as B<tucker.myplace.com/book/list> and
 B<tucker.myplace.com/book/list.json> are considered as separate requests and so are
 cached separately.
-
 
 =head2 Cache backends 
 
@@ -166,7 +171,7 @@ are also available through CHI.
  plugin caching-actions => { cache_actions => [qw/user show/]}; 
 
  By default,  all actions with successful GET requests will be cached
- 
+
 =item options
 
   options =>  \%options
@@ -188,7 +193,21 @@ are also available through CHI.
      }
   } 
 
-
 =back
 
+=head1 AUTHOR
 
+Siddhartha Basu <biosidd@gmail.com>
+
+=head1 COPYRIGHT AND LICENSE
+
+This software is copyright (c) 2010 by Siddhartha Basu.
+
+This is free software; you can redistribute it and/or modify it under
+the same terms as the Perl 5 programming language system itself.
+
+=cut
+
+__END__
+
+# ABSTRACT: Mojolicious plugin for caching
