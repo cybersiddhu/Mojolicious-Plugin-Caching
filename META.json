@@ -1,5 +1,5 @@
 {
-   "abstract" : "Mojolicious plugin for caching page",
+   "abstract" : "Mojolicious plugin for caching",
    "author" : [
       "Siddhartha Basu <biosidd@gmail.com>"
    ],

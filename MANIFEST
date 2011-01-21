@@ -5,6 +5,7 @@ MANIFEST
 META.json
 META.yml
 dist.ini
+lib/Mojolicious/Plugin/Cache.pm
 lib/Mojolicious/Plugin/Cache/Action.pm
 lib/Mojolicious/Plugin/Cache/Page.pm
 t/action-cache.t

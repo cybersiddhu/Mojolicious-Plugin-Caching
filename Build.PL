@@ -12,7 +12,7 @@ my %module_build_args = (
   'configure_requires' => {
     'Module::Build' => '0.3601'
   },
-  'dist_abstract' => 'Mojolicious plugin for caching page',
+  'dist_abstract' => 'Mojolicious plugin for caching',
   'dist_author' => [
     'Siddhartha Basu <biosidd@gmail.com>'
   ],
