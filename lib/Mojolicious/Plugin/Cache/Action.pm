@@ -174,7 +174,7 @@ are also available through CHI.
 
   #Mojolicious lite using memcache 
   plugin caching-actions => {
-     cache_options => {
+       options => {
        driver => 'Memcached',  
        servers => [ "10.0.0.15:11211",  "10.0.0.15:11212" ] 
      }
@@ -182,7 +182,7 @@ are also available through CHI.
 
   #Mojolicious lite using file based storage
   plugin caching-actions => {
-     cache_options => {
+       options => {
        driver => 'File',  
        root_dir => '/path/to/cache' 
      }
