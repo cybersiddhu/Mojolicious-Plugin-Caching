@@ -29,4 +29,3 @@ t/page-cache.t
 t/release-distmeta.t
 t/release-pod-coverage.t
 t/release-pod-syntax.t
-t/release-portability.t
