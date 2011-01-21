@@ -2,7 +2,7 @@
 
 =head1 NAME
 
-Mojolicious::Plugin::Cache::Page - Mojolicious plugin for caching page
+Mojolicious::Plugin::Cache - Mojolicious plugin for caching
 
 =head1 VERSION
 
@@ -10,28 +10,56 @@ version 0.001
 
 =head1 SYNOPSIS
 
- #Mojolicious
+#Mojolicious
+ $self->plugin('cache-action');
 
- $self->plugin('cache-page');
-
- #Mojolicious::Lite
-
-  plugin 'cache-page';
+#Mojolicious::Lite
+  plugin 'cache-action';
 
 =head1 DESCRIPTION
 
-This plugin caches the entire output of controller action in a HTML file which can be
-delivered directly by the webserver without even going through the controller at all. The
-cache will generate files for example user/2/view.html,  user/new.html etc which matches
-the request urls. The webserver picks up the existing file by matching the path otherwise
-it gets passed to the mojolicious controller.
+This plugin caches responses of mojolicious applications. It works by caching the entire
+output of controller action for every request. Action caching internally uses
+the I<before_dispatch> hook to serve the response from cache by skipping the entire
+controller body. Uncached responses are cached in an I<after_dispatch> hook. 
 
-The cache is named according to path and so the cache will not differentiate between 
-an identical page that is accessed from B<tucker.myplace.com/user/2/view.html>
-and from B<caboose.myplace.com/user/2/view.html>. This caching system ignores the query
-parameters. So,  for example /users?page=1 will be cached as users.html and so another
-call to /users?page=2 will retrieve the users.html. The cache is expired by deleting the
-html file that defered it creation until a new request comes in. 
+The cache is named according to the current host and path. So,  the cache will
+differentiate between an identical page that is accessed from B<tucker.myplace.com/user/2>
+and from B<caboose.myplace.com/user/2> 
+
+Different representation of the same resource such as B<tucker.myplace.com/book/list> and
+B<tucker.myplace.com/book/list.json> are considered as separate requests and so are
+cached separately.
+
+=head2 Cache backends 
+
+This plugin uses B<CHI> L<http://http://search.cpan.org/~jswartz/CHI> for caching responses.
+So,  all the various cache backends and customization options of B<CHI> are supported. By
+default,  this plugin uses the B<Memory>
+L<http://search.cpan.org/~jswartz/CHI-0.36/lib/CHI/Driver/Memory.pm> cache backend.
+Various other backends 
+
+=over
+
+=item *  
+
+L<http://search.cpan.org/~jswartz/CHI-0.36/lib/CHI/Driver/File.pm|File> 
+
+=item *
+
+L<http://search.cpan.org/~jswartz/CHI-0.36/lib/CHI/Driver/FastMmap.pm|FastMmap>
+
+=item *
+
+L<http://search.cpan.org/~jswartz/CHI-Driver-Memcached-0.12/lib/CHI/Driver/Memcached.pm|Memcached>
+
+=item *
+
+L<http://search.cpan.org/~jswartz/CHI-Driver-BerkeleyDB-0.03/lib/CHI/Driver/BerkeleyDB.pm|BerkeleyDB>
+
+=back
+
+are also available through CHI.
 
 =head2 Options
 
@@ -42,17 +70,30 @@ html file that defered it creation until a new request comes in.
  actions => [qw/action1 action2 ....]
 
  #Mojolicious::Lite 
- plugin cache-page => { actions => [qw/user show/]}; 
+ plugin caching-actions => { cache_actions => [qw/user show/]}; 
 
  By default,  all actions with successful GET requests will be cached
 
-=item cache_directory
+=item options
 
-  By default, for mojolicious lite application the current working directory is set for
-  page caching. For mojolicious application it is set to the B<public> folder. 
+  options =>  \%options
+  All CHI module options are recognized
 
   #Mojolicious lite using memcache 
-  plugin cache-page => { cache_direcotry => '/home/page_cache' }; 
+  plugin caching-actions => {
+       options => {
+       driver => 'Memcached',  
+       servers => [ "10.0.0.15:11211",  "10.0.0.15:11212" ] 
+     }
+  } 
+
+  #Mojolicious lite using file based storage
+  plugin caching-actions => {
+       options => {
+       driver => 'File',  
+       root_dir => '/path/to/cache' 
+     }
+  } 
 
 =back
 
