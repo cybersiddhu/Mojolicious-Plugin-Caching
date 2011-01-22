@@ -51,7 +51,9 @@ sub register {
                 if defined $conf->{actions}
                     and not exists $actions->{$name};
 
+            $app->log->debug('I am here');
             my $parts = $c->req->url->path->parts;
+            $app->log->debug( 'path parts ', join( "\n", @$parts ) );
             my $file_name;
             if ( @$parts == 1 ) {
                 $file_name = catfile( $cache_dir, $parts->[0] . '.html' );
