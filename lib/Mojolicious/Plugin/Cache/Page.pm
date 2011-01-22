@@ -47,6 +47,7 @@ sub register {
             ## - only html response
             return if $c->res->headers->content_type ne 'text/html';
 
+            $app->log->debug('I am here');
             ## - have to match the action
             my $name = $c->stash('action');
             return
