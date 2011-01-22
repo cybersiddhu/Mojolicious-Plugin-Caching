@@ -39,7 +39,7 @@ sub register {
             return if $c->res->code != 200;
 
             ## - only html response
-            return if $c->res->headers->content_type ne 'text/html';
+            return if $c->res->headers->content_type !~ /^text\/html/;
 
             ## - have to match the action
             my $name = $c->stash('action');
