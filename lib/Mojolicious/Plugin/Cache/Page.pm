@@ -36,12 +36,14 @@ sub register {
         'after_dispatch' => sub {
             my ( $self, $c ) = @_;
 
+            $app->log->debug('I am here');
             ## - has to be GET request
             return if $c->req->method ne 'GET';
 
             ## - only successful response
             return if $c->res->code != 200;
 
+            $app->log->debug('I am here');
             ## - only html response
             return if $c->res->headers->content_type ne 'text/html';
 
