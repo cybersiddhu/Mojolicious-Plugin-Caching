@@ -44,6 +44,7 @@ sub register {
             return if $c->res->code != 200;
 
             $app->log->debug('I am here');
+            $app->log->debug( $c->res->headers->content_type );
             ## - only html response
             return if $c->res->headers->content_type ne 'text/html';
 
