@@ -8,6 +8,7 @@ dist.ini
 lib/Mojolicious/Plugin/Cache.pm
 lib/Mojolicious/Plugin/Cache/Action.pm
 lib/Mojolicious/Plugin/Cache/Page.pm
+output
 t/action-cache.t
 t/lib/book/lib/Book.pm
 t/lib/book/lib/Book/Controller/Cache.pm

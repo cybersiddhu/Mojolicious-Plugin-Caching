@@ -1,0 +1,91 @@
+The old Moose::Util::MetaRole API (before version 0.94) has been deprecated at /Users/sid/perl5/perlbrew/perls/perl-5.10.1/lib/site_perl/5.10.1/Dist/Zilla.pm line 10
+	Dist::Zilla::BEGIN() called at /Users/sid/perl5/perlbrew/perls/perl-5.10.1/lib/site_perl/5.10.1/MooseX/LazyRequire.pm line 10
+	eval {...} called at /Users/sid/perl5/perlbrew/perls/perl-5.10.1/lib/site_perl/5.10.1/MooseX/LazyRequire.pm line 10
+	require Dist/Zilla.pm called at /Users/sid/perl5/perlbrew/perls/perl-5.10.1/lib/site_perl/5.10.1/darwin-2level/Class/MOP.pm line 114
+	Class::MOP::__ANON__() called at /Users/sid/perl5/perlbrew/perls/perl-5.10.1/lib/site_perl/5.10.1/Try/Tiny.pm line 71
+	eval {...} called at /Users/sid/perl5/perlbrew/perls/perl-5.10.1/lib/site_perl/5.10.1/Try/Tiny.pm line 67
+	Try::Tiny::try('CODE(0xbda5a0)', 'Try::Tiny::Catch=REF(0xc87320)') called at /Users/sid/perl5/perlbrew/perls/perl-5.10.1/lib/site_perl/5.10.1/darwin-2level/Class/MOP.pm line 125
+	Class::MOP::load_first_existing_class('Dist::Zilla') called at /Users/sid/perl5/perlbrew/perls/perl-5.10.1/lib/site_perl/5.10.1/darwin-2level/Class/MOP.pm line 137
+	Class::MOP::load_class('Dist::Zilla', undef) called at /Users/sid/perl5/perlbrew/perls/perl-5.10.1/lib/site_perl/5.10.1/darwin-2level/Moose/Meta/Class.pm line 288
+	Moose::Meta::Class::superclasses(undef, 'Dist::Zilla') called at /Users/sid/perl5/perlbrew/perls/perl-5.10.1/lib/site_perl/5.10.1/darwin-2level/Moose.pm line 54
+	Moose::extends('Moose::Meta::Class=HASH(0xbd9a60)', 'Dist::Zilla') called at /Users/sid/perl5/perlbrew/perls/perl-5.10.1/lib/site_perl/5.10.1/darwin-2level/Moose/Exporter.pm line 359
+	Moose::extends('Dist::Zilla') called at /Users/sid/perl5/perlbrew/perls/perl-5.10.1/lib/site_perl/5.10.1/Dist/Zilla/Dist/Builder.pm line 7
+	require Dist/Zilla/Dist/Builder.pm called at /Users/sid/perl5/perlbrew/perls/perl-5.10.1/lib/site_perl/5.10.1/Dist/Zilla/App.pm line 98
+	Dist::Zilla::App::zilla('Dist::Zilla::App=HASH(0x1317bd0)') called at /Users/sid/perl5/perlbrew/perls/perl-5.10.1/lib/site_perl/5.10.1/Dist/Zilla/App/Command.pm line 13
+	Dist::Zilla::App::Command::zilla('Dist::Zilla::App::Command::test=HASH(0xc4a9e0)') called at /Users/sid/perl5/perlbrew/perls/perl-5.10.1/lib/site_perl/5.10.1/Dist/Zilla/App/Command/test.pm line 18
+	Dist::Zilla::App::Command::test::execute('Dist::Zilla::App::Command::test=HASH(0xc4a9e0)', 'Getopt::Long::Descriptive::Opts::__OPT__::2=HASH(0xbd9d10)', 'ARRAY(0x871830)') called at /Users/sid/perl5/perlbrew/perls/perl-5.10.1/lib/site_perl/5.10.1/App/Cmd.pm line 231
+	App::Cmd::execute_command('Dist::Zilla::App=HASH(0x1317bd0)', 'Dist::Zilla::App::Command::test=HASH(0xc4a9e0)', 'Getopt::Long::Descriptive::Opts::__OPT__::2=HASH(0xbd9d10)') called at /Users/sid/perl5/perlbrew/perls/perl-5.10.1/lib/site_perl/5.10.1/App/Cmd.pm line 170
+	App::Cmd::run('Dist::Zilla::App') called at /Users/sid/perl5/perlbrew/bin/dzil line 11
+The old Moose::Util::MetaRole API (before version 0.94) has been deprecated at /Users/sid/perl5/perlbrew/perls/perl-5.10.1/lib/site_perl/5.10.1/Dist/Zilla/MVP/RootSection.pm line 10
+	Dist::Zilla::MVP::RootSection::BEGIN() called at /Users/sid/perl5/perlbrew/perls/perl-5.10.1/lib/site_perl/5.10.1/Dist/Zilla/MVP/RootSection.pm line 10
+	eval {...} called at /Users/sid/perl5/perlbrew/perls/perl-5.10.1/lib/site_perl/5.10.1/Dist/Zilla/MVP/RootSection.pm line 10
+	require Dist/Zilla/MVP/RootSection.pm called at /Users/sid/perl5/perlbrew/perls/perl-5.10.1/lib/site_perl/5.10.1/Dist/Zilla/MVP/Assembler/Zilla.pm line 11
+	Dist::Zilla::MVP::Assembler::Zilla::BEGIN() called at /Users/sid/perl5/perlbrew/perls/perl-5.10.1/lib/site_perl/5.10.1/Dist/Zilla/MVP/RootSection.pm line 10
+	eval {...} called at /Users/sid/perl5/perlbrew/perls/perl-5.10.1/lib/site_perl/5.10.1/Dist/Zilla/MVP/RootSection.pm line 10
+	require Dist/Zilla/MVP/Assembler/Zilla.pm called at /Users/sid/perl5/perlbrew/perls/perl-5.10.1/lib/site_perl/5.10.1/Dist/Zilla/Dist/Builder.pm line 170
+	Dist::Zilla::Dist::Builder::_load_config('Dist::Zilla::Dist::Builder', 'HASH(0xde5110)') called at /Users/sid/perl5/perlbrew/perls/perl-5.10.1/lib/site_perl/5.10.1/Dist/Zilla/Dist/Builder.pm line 27
+	Dist::Zilla::Dist::Builder::from_config('Dist::Zilla::Dist::Builder', 'HASH(0xde4eb0)') called at /Users/sid/perl5/perlbrew/perls/perl-5.10.1/lib/site_perl/5.10.1/Dist/Zilla/App.pm line 111
+	Dist::Zilla::App::zilla('Dist::Zilla::App=HASH(0x1317bd0)') called at /Users/sid/perl5/perlbrew/perls/perl-5.10.1/lib/site_perl/5.10.1/Dist/Zilla/App/Command.pm line 13
+	Dist::Zilla::App::Command::zilla('Dist::Zilla::App::Command::test=HASH(0xc4a9e0)') called at /Users/sid/perl5/perlbrew/perls/perl-5.10.1/lib/site_perl/5.10.1/Dist/Zilla/App/Command/test.pm line 18
+	Dist::Zilla::App::Command::test::execute('Dist::Zilla::App::Command::test=HASH(0xc4a9e0)', 'Getopt::Long::Descriptive::Opts::__OPT__::2=HASH(0xbd9d10)', 'ARRAY(0x871830)') called at /Users/sid/perl5/perlbrew/perls/perl-5.10.1/lib/site_perl/5.10.1/App/Cmd.pm line 231
+	App::Cmd::execute_command('Dist::Zilla::App=HASH(0x1317bd0)', 'Dist::Zilla::App::Command::test=HASH(0xc4a9e0)', 'Getopt::Long::Descriptive::Opts::__OPT__::2=HASH(0xbd9d10)') called at /Users/sid/perl5/perlbrew/perls/perl-5.10.1/lib/site_perl/5.10.1/App/Cmd.pm line 170
+	App::Cmd::run('Dist::Zilla::App') called at /Users/sid/perl5/perlbrew/bin/dzil line 11
+The alias and excludes options for role application have been renamed -alias and -excludes (Pod::Elemental::Command is consuming Pod::Elemental::Paragraph - do you need to upgrade Pod::Elemental::Command?) at /Users/sid/perl5/perlbrew/perls/perl-5.10.1/lib/site_perl/5.10.1/Pod/Elemental/Command.pm line 6
+	require Pod/Elemental/Command.pm called at /Users/sid/perl5/perlbrew/perls/perl-5.10.1/lib/site_perl/5.10.1/darwin-2level/Class/MOP.pm line 114
+	Class::MOP::__ANON__() called at /Users/sid/perl5/perlbrew/perls/perl-5.10.1/lib/site_perl/5.10.1/Try/Tiny.pm line 71
+	eval {...} called at /Users/sid/perl5/perlbrew/perls/perl-5.10.1/lib/site_perl/5.10.1/Try/Tiny.pm line 67
+	Try::Tiny::try('CODE(0x20b4c40)', 'Try::Tiny::Catch=REF(0x20b32e0)') called at /Users/sid/perl5/perlbrew/perls/perl-5.10.1/lib/site_perl/5.10.1/darwin-2level/Class/MOP.pm line 125
+	Class::MOP::load_first_existing_class('Pod::Elemental::Command') called at /Users/sid/perl5/perlbrew/perls/perl-5.10.1/lib/site_perl/5.10.1/darwin-2level/Class/MOP.pm line 137
+	Class::MOP::load_class('Pod::Elemental::Command', undef) called at /Users/sid/perl5/perlbrew/perls/perl-5.10.1/lib/site_perl/5.10.1/darwin-2level/Moose/Util.pm line 113
+	Moose::Util::_apply_all_roles('Moose::Meta::Class=HASH(0x20ac550)', undef, 'Pod::Elemental::Command') called at /Users/sid/perl5/perlbrew/perls/perl-5.10.1/lib/site_perl/5.10.1/darwin-2level/Moose/Util.pm line 91
+	Moose::Util::apply_all_roles('Moose::Meta::Class=HASH(0x20ac550)', 'Pod::Elemental::Command') called at /Users/sid/perl5/perlbrew/perls/perl-5.10.1/lib/site_perl/5.10.1/darwin-2level/Moose.pm line 58
+	Moose::with('Moose::Meta::Class=HASH(0x20ac550)', 'Pod::Elemental::Command') called at /Users/sid/perl5/perlbrew/perls/perl-5.10.1/lib/site_perl/5.10.1/darwin-2level/Moose/Exporter.pm line 359
+	Moose::with('Pod::Elemental::Command') called at /Users/sid/perl5/perlbrew/perls/perl-5.10.1/lib/site_perl/5.10.1/Pod/Elemental/Element/Generic/Command.pm line 19
+	require Pod/Elemental/Element/Generic/Command.pm called at /Users/sid/perl5/perlbrew/perls/perl-5.10.1/lib/site_perl/5.10.1/darwin-2level/Class/MOP.pm line 114
+	Class::MOP::__ANON__() called at /Users/sid/perl5/perlbrew/perls/perl-5.10.1/lib/site_perl/5.10.1/Try/Tiny.pm line 71
+	eval {...} called at /Users/sid/perl5/perlbrew/perls/perl-5.10.1/lib/site_perl/5.10.1/Try/Tiny.pm line 67
+	Try::Tiny::try('CODE(0x2098cd0)', 'Try::Tiny::Catch=REF(0x20ac260)') called at /Users/sid/perl5/perlbrew/perls/perl-5.10.1/lib/site_perl/5.10.1/darwin-2level/Class/MOP.pm line 125
+	Class::MOP::load_first_existing_class('Pod::Elemental::Element::Generic::Command') called at /Users/sid/perl5/perlbrew/perls/perl-5.10.1/lib/site_perl/5.10.1/darwin-2level/Class/MOP.pm line 137
+	Class::MOP::load_class('Pod::Elemental::Element::Generic::Command', undef) called at /Users/sid/perl5/perlbrew/perls/perl-5.10.1/lib/site_perl/5.10.1/darwin-2level/Moose/Meta/Class.pm line 288
+	Moose::Meta::Class::superclasses(undef, 'Pod::Elemental::Element::Generic::Command') called at /Users/sid/perl5/perlbrew/perls/perl-5.10.1/lib/site_perl/5.10.1/darwin-2level/Moose.pm line 54
+	Moose::extends('Moose::Meta::Class=HASH(0x209c450)', 'Pod::Elemental::Element::Generic::Command') called at /Users/sid/perl5/perlbrew/perls/perl-5.10.1/lib/site_perl/5.10.1/darwin-2level/Moose/Exporter.pm line 359
+	Moose::extends('Pod::Elemental::Element::Generic::Command') called at /Users/sid/perl5/perlbrew/perls/perl-5.10.1/lib/site_perl/5.10.1/Pod/Elemental/Element/Pod5/Command.pm line 8
+	require Pod/Elemental/Element/Pod5/Command.pm called at /Users/sid/perl5/perlbrew/perls/perl-5.10.1/lib/site_perl/5.10.1/Pod/Elemental/Transformer/Pod5.pm line 15
+	Pod::Elemental::Transformer::Pod5::BEGIN() called at /Users/sid/perl5/perlbrew/perls/perl-5.10.1/lib/site_perl/5.10.1/Pod/Elemental/Command.pm line 0
+	eval {...} called at /Users/sid/perl5/perlbrew/perls/perl-5.10.1/lib/site_perl/5.10.1/Pod/Elemental/Command.pm line 0
+	require Pod/Elemental/Transformer/Pod5.pm called at /Users/sid/perl5/perlbrew/perls/perl-5.10.1/lib/site_perl/5.10.1/Pod/Elemental.pm line 20
+	Pod::Elemental::BEGIN() called at /Users/sid/perl5/perlbrew/perls/perl-5.10.1/lib/site_perl/5.10.1/Pod/Elemental/Command.pm line 0
+	eval {...} called at /Users/sid/perl5/perlbrew/perls/perl-5.10.1/lib/site_perl/5.10.1/Pod/Elemental/Command.pm line 0
+	require Pod/Elemental.pm called at /Users/sid/perl5/perlbrew/perls/perl-5.10.1/lib/site_perl/5.10.1/Pod/Weaver.pm line 14
+	Pod::Weaver::BEGIN() called at /Users/sid/perl5/perlbrew/perls/perl-5.10.1/lib/site_perl/5.10.1/Pod/Elemental/Command.pm line 0
+	eval {...} called at /Users/sid/perl5/perlbrew/perls/perl-5.10.1/lib/site_perl/5.10.1/Pod/Elemental/Command.pm line 0
+	require Pod/Weaver.pm called at /Users/sid/perl5/perlbrew/perls/perl-5.10.1/lib/site_perl/5.10.1/Dist/Zilla/Plugin/PodWeaver.pm line 9
+	Dist::Zilla::Plugin::PodWeaver::BEGIN() called at /Users/sid/perl5/perlbrew/perls/perl-5.10.1/lib/site_perl/5.10.1/Pod/Elemental/Command.pm line 0
+	eval {...} called at /Users/sid/perl5/perlbrew/perls/perl-5.10.1/lib/site_perl/5.10.1/Pod/Elemental/Command.pm line 0
+	require Dist/Zilla/Plugin/PodWeaver.pm called at (eval 1830) line 1
+	eval 'require Dist::Zilla::Plugin::PodWeaver; 1
+;' called at /Users/sid/perl5/perlbrew/perls/perl-5.10.1/lib/site_perl/5.10.1/Config/MVP/Section.pm line 142
+	Config::MVP::Section::_BUILD_package_settings('Dist::Zilla::MVP::Section=HASH(0xfae8a0)') called at /Users/sid/perl5/perlbrew/perls/perl-5.10.1/lib/site_perl/5.10.1/Config/MVP/Section.pm line 153
+	Config::MVP::Section::BUILD('Dist::Zilla::MVP::Section=HASH(0xfae8a0)', 'HASH(0x206fa20)') called at /Users/sid/perl5/perlbrew/perls/perl-5.10.1/lib/site_perl/5.10.1/darwin-2level/Class/MOP/Method.pm line 123
+	Class::MOP::Method::execute('Moose::Meta::Method=HASH(0xdf9f50)', 'Dist::Zilla::MVP::Section=HASH(0xfae8a0)', 'HASH(0x206fa20)') called at /Users/sid/perl5/perlbrew/perls/perl-5.10.1/lib/site_perl/5.10.1/darwin-2level/Moose/Object.pm line 57
+	Moose::Object::BUILDALL('Dist::Zilla::MVP::Section=HASH(0xfae8a0)', 'HASH(0x206fa20)') called at /Users/sid/perl5/perlbrew/perls/perl-5.10.1/lib/site_perl/5.10.1/darwin-2level/Moose/Meta/Class.pm line 278
+	Moose::Meta::Class::new_object('Moose::Meta::Class=HASH(0xdea4f0)', 'HASH(0x206fa20)') called at /Users/sid/perl5/perlbrew/perls/perl-5.10.1/lib/site_perl/5.10.1/darwin-2level/Moose/Object.pm line 26
+	Moose::Object::new('Dist::Zilla::MVP::Section', 'HASH(0xe33da0)') called at /Users/sid/perl5/perlbrew/perls/perl-5.10.1/lib/site_perl/5.10.1/Config/MVP/Assembler.pm line 61
+	Config::MVP::Assembler::begin_section('Dist::Zilla::MVP::Assembler::Zilla=HASH(0xde6c40)', 'PodWeaver', 'PodWeaver') called at /Users/sid/perl5/perlbrew/perls/perl-5.10.1/lib/site_perl/5.10.1/Config/MVP/Assembler.pm line 87
+	Config::MVP::Assembler::change_section('Dist::Zilla::MVP::Assembler::Zilla=HASH(0xde6c40)', 'PodWeaver', 'PodWeaver') called at /Users/sid/perl5/perlbrew/perls/perl-5.10.1/lib/site_perl/5.10.1/Config/MVP/Reader/INI.pm line 52
+	Config::MVP::Reader::INI::INIReader::change_section('Config::MVP::Reader::INI::INIReader=HASH(0xe08ef0)', 'PodWeaver') called at /Users/sid/perl5/perlbrew/perls/perl-5.10.1/lib/site_perl/5.10.1/Config/INI/Reader.pm line 117
+	Config::INI::Reader::read_handle('Config::MVP::Reader::INI::INIReader=HASH(0xe08ef0)', 'IO::File=GLOB(0xe1d5d0)') called at /Users/sid/perl5/perlbrew/perls/perl-5.10.1/lib/site_perl/5.10.1/Mixin/Linewise/Readers.pm line 85
+	Mixin::Linewise::Readers::__ANON__() called at /Users/sid/perl5/perlbrew/perls/perl-5.10.1/lib/site_perl/5.10.1/Config/MVP/Reader/INI.pm line 21
+	Config::MVP::Reader::INI::read_into_assembler('Config::MVP::Reader::INI=HASH(0xe0a830)', './dist.ini', 'Dist::Zilla::MVP::Assembler::Zilla=HASH(0xde6c40)') called at /Users/sid/perl5/perlbrew/perls/perl-5.10.1/lib/site_perl/5.10.1/Config/MVP/Reader.pm line 19
+	Config::MVP::Reader::read_config('Config::MVP::Reader::INI=HASH(0xe0a830)', './dist.ini', 'HASH(0xe1d490)') called at /Users/sid/perl5/perlbrew/perls/perl-5.10.1/lib/site_perl/5.10.1/Config/MVP/Reader/Finder.pm line 84
+	Config::MVP::Reader::Finder::read_config('Dist::Zilla::MVP::Reader::Finder', 'Path::Class::File=HASH(0xe1d480)', 'HASH(0xe1d490)') called at /Users/sid/perl5/perlbrew/perls/perl-5.10.1/lib/site_perl/5.10.1/Dist/Zilla/Dist/Builder.pm line 187
+	Dist::Zilla::Dist::Builder::__ANON__() called at /Users/sid/perl5/perlbrew/perls/perl-5.10.1/lib/site_perl/5.10.1/Try/Tiny.pm line 76
+	eval {...} called at /Users/sid/perl5/perlbrew/perls/perl-5.10.1/lib/site_perl/5.10.1/Try/Tiny.pm line 67
+	Try::Tiny::try('CODE(0xde5250)', 'Try::Tiny::Catch=REF(0xe1d520)') called at /Users/sid/perl5/perlbrew/perls/perl-5.10.1/lib/site_perl/5.10.1/Dist/Zilla/Dist/Builder.pm line 213
+	Dist::Zilla::Dist::Builder::_load_config('Dist::Zilla::Dist::Builder', 'HASH(0xde5110)') called at /Users/sid/perl5/perlbrew/perls/perl-5.10.1/lib/site_perl/5.10.1/Dist/Zilla/Dist/Builder.pm line 27
+	Dist::Zilla::Dist::Builder::from_config('Dist::Zilla::Dist::Builder', 'HASH(0xde4eb0)') called at /Users/sid/perl5/perlbrew/perls/perl-5.10.1/lib/site_perl/5.10.1/Dist/Zilla/App.pm line 111
+	Dist::Zilla::App::zilla('Dist::Zilla::App=HASH(0x1317bd0)') called at /Users/sid/perl5/perlbrew/perls/perl-5.10.1/lib/site_perl/5.10.1/Dist/Zilla/App/Command.pm line 13
+	Dist::Zilla::App::Command::zilla('Dist::Zilla::App::Command::test=HASH(0xc4a9e0)') called at /Users/sid/perl5/perlbrew/perls/perl-5.10.1/lib/site_perl/5.10.1/Dist/Zilla/App/Command/test.pm line 18
+	Dist::Zilla::App::Command::test::execute('Dist::Zilla::App::Command::test=HASH(0xc4a9e0)', 'Getopt::Long::Descriptive::Opts::__OPT__::2=HASH(0xbd9d10)', 'ARRAY(0x871830)') called at /Users/sid/perl5/perlbrew/perls/perl-5.10.1/lib/site_perl/5.10.1/App/Cmd.pm line 231
+	App::Cmd::execute_command('Dist::Zilla::App=HASH(0x1317bd0)', 'Dist::Zilla::App::Command::test=HASH(0xc4a9e0)', 'Getopt::Long::Descriptive::Opts::__OPT__::2=HASH(0xbd9d10)') called at /Users/sid/perl5/perlbrew/perls/perl-5.10.1/lib/site_perl/5.10.1/App/Cmd.pm line 170
+	App::Cmd::run('Dist::Zilla::App') called at /Users/sid/perl5/perlbrew/bin/dzil line 11
