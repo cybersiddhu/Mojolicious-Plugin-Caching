@@ -76,7 +76,9 @@ sub register {
 
 __END__
 
-# ABSTRACT: Mojolicious plugin for caching page
+=head1 NAME
+
+Mojolicious::Plugin::Cache::Page - Page caching plugin
 
 
 =head1 SYNOPSIS

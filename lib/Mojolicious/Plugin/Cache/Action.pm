@@ -96,15 +96,18 @@ sub register {
 
 __END__
 
-# ABSTRACT: Mojolicious plugin for caching
+=head1 NAME
 
+Mojolicious::Plugin::Cache::Action - Action caching plugin
 
 =head1 SYNOPSIS
 
 #Mojolicious
+
  $self->plugin('cache-action');
 
 #Mojolicious::Lite
+
   plugin 'cache-action';
 
 
@@ -126,7 +129,7 @@ cached separately.
 
 =head2 Cache backends 
 
-This plugin uses B<CHI> L<http://http://search.cpan.org/~jswartz/CHI> for caching responses.
+This plugin uses B<CHI> L<http://search.cpan.org/~jswartz/CHI> for caching responses.
 So,  all the various cache backends and customization options of B<CHI> are supported. By
 default,  this plugin uses the B<Memory>
 L<http://search.cpan.org/~jswartz/CHI-0.36/lib/CHI/Driver/Memory.pm> cache backend.
