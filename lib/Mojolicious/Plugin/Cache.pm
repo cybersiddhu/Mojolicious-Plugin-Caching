@@ -12,6 +12,7 @@ __END__
 =head1 SYNOPSIS
 
 # Action caching
+
 ## Mojolicious
 
 $self->plugin('cache-action');
@@ -22,6 +23,7 @@ plugin 'cache-action';
 
 
 # Page caching
+
 ## Mojolicious
 
 $self->plugin('cache-page');
@@ -42,18 +44,18 @@ and page-caching.
 
 =item *
 
-L<Mojolicious::Plugin::Cache::Action|Action caching>
+L<Action caching|Mojolicious::Plugin::Cache::Action>
 
 B<Action caching> works by caching the entire response of controller action for every
-requrest. For more read L<Mojolicious::Plugin::Cache::Action|here ...>
+requrest. For more read L<here|Mojolicious::Plugin::Cache::Action>
 
 =item *
 
-L<Mojolicious::Plugin::Cache::Page|Page caching>
+L<Page caching|Mojolicious::Plugin::Cache::Page>
 
 B<Page caching> works by caching the controller response in a HTML file which can be
-served directly by webserver bypassing the controller altogether. For more read here
-L<Mojolicious::Plugin::Cache::Page|here ...>
+served directly by webserver bypassing the controller altogether. For more read 
+L<here|Mojolicious::Plugin::Cache::Page>
 
 =back
 
