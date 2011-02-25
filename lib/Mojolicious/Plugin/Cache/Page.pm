@@ -82,7 +82,7 @@ sub register {
 
 =head1 NAME
 
-Mojolicious::Plugin::Cache::Page - Mojolicious plugin for caching page
+Mojolicious::Plugin::Cache::Page
 
 =head1 VERSION
 
@@ -136,6 +136,10 @@ html file that defered it creation until a new request comes in.
 
 =back
 
+=head1 NAME
+
+Mojolicious::Plugin::Cache::Page - Page caching plugin
+
 =head1 AUTHOR
 
 Siddhartha Basu <biosidd@gmail.com>
@@ -150,5 +154,3 @@ the same terms as the Perl 5 programming language system itself.
 =cut
 
 __END__
-
-# ABSTRACT: Mojolicious plugin for caching page
