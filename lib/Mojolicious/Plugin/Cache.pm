@@ -1,7 +1,7 @@
 package Mojolicious::Plugin::Cache;
 
 BEGIN {
-    $Mojolicious::Plugin::Cache::VERSION = '0.0012';
+    $Mojolicious::Plugin::Cache::VERSION = '0.0012';    # TRIAL
 }
 
 # Module implementation
