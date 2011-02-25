@@ -1,7 +1,7 @@
 package Mojolicious::Plugin::Cache::Action;
 
 BEGIN {
-    $Mojolicious::Plugin::Cache::Action::VERSION = '0.0011';
+    $Mojolicious::Plugin::Cache::Action::VERSION = '0.0012';
 }
 
 use strict;
@@ -104,7 +104,7 @@ Mojolicious::Plugin::Cache::Action
 
 =head1 VERSION
 
-version 0.0011
+version 0.0012
 
 =head1 SYNOPSIS
 
