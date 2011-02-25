@@ -59,7 +59,7 @@ requrest. For more read L<here|Mojolicious::Plugin::Cache::Action>
 L<Page caching|Mojolicious::Plugin::Cache::Page>
 
 B<Page caching> works by caching the controller response in a HTML file which can be
-served directly by webserver bypassing the controller altogether. For more read here
+served directly by webserver bypassing the controller altogether. For more read 
 L<here|Mojolicious::Plugin::Cache::Page>
 
 =back
