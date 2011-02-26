@@ -79,11 +79,13 @@ sub register {
 
 =head1 SYNOPSIS
 
-#Mojolicious
+Mojolicious:
+
  $self->plugin('cache-page');
 
-#Mojolicious::Lite
-  plugin 'cache-page';
+Mojolicious::Lite:
+
+ plugin 'cache-page';
 
 
 =head1 DESCRIPTION

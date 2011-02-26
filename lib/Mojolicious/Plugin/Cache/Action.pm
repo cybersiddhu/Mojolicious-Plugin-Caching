@@ -98,11 +98,13 @@ sub register {
 
 =head1 SYNOPSIS
 
-#Mojolicious
+Mojolicious:
+
  $self->plugin('cache-action');
 
-#Mojolicious::Lite
-  plugin 'cache-action';
+Mojolicious::Lite:
+
+ plugin 'cache-action';
 
 
 =head1 DESCRIPTION
