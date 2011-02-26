@@ -10,19 +10,15 @@ version 0.0013
 
 =head1 SYNOPSIS
 
-#Action caching
-  ## Mojolicious
+Action caching:
+
+  plugin 'cache-action';
   $self->plugin('cache-action');
 
-  ##Mojolicious::Lite
-  plugin 'cache-action';
+Page caching:
 
-#Page caching
- ## Mojolicious
- $self->plugin('cache-page');
-
-##Mojolicious::Lite
  plugin 'cache-page'
+ $self->plugin('cache-page');
 
 =head1 DESCRIPTION
 

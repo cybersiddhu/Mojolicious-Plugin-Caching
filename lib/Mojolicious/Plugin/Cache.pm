@@ -4,28 +4,22 @@ package Mojolicious::Plugin::Cache;
 #
 1;
 
-__END__
 
 # ABSTRACT: Mojolicious plugin for caching
 
 
 =head1 SYNOPSIS
 
-#Action caching
-  ## Mojolicious
+Action caching:
+
+  plugin 'cache-action';
   $self->plugin('cache-action');
 
-  ##Mojolicious::Lite
-  plugin 'cache-action';
 
-#Page caching
- ## Mojolicious
- $self->plugin('cache-page');
+Page caching:
 
-##Mojolicious::Lite
  plugin 'cache-page'
-	
-	
+ $self->plugin('cache-page');
 
 
 =head1 DESCRIPTION
