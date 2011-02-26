@@ -18,4 +18,4 @@ requires:
   Mojolicious: 0.999926
 resources:
   repository: git://github.com/cybersiddhu/Mojolicious-Plugin-Caching.git
-version: 0.0012
+version: 0.0013

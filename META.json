@@ -31,7 +31,7 @@
          }
       }
    },
-   "release_status" : "testing",
+   "release_status" : "stable",
    "resources" : {
       "repository" : {
          "type" : "git",
@@ -39,6 +39,6 @@
          "web" : "http://github.com/cybersiddhu/Mojolicious-Plugin-Caching"
       }
    },
-   "version" : "0.0012"
+   "version" : "0.0013"
 }
 

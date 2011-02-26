@@ -1,7 +1,7 @@
 package Mojolicious::Plugin::Cache::Page;
 
 BEGIN {
-    $Mojolicious::Plugin::Cache::Page::VERSION = '0.0012';    # TRIAL
+    $Mojolicious::Plugin::Cache::Page::VERSION = '0.0013';
 }
 
 use strict;
@@ -82,20 +82,18 @@ sub register {
 
 =head1 NAME
 
-Mojolicious::Plugin::Cache::Page
+Mojolicious::Plugin::Cache::Page - Page caching plugin
 
 =head1 VERSION
 
-version 0.0012
+version 0.0013
 
 =head1 SYNOPSIS
 
- #Mojolicious
-
+#Mojolicious
  $self->plugin('cache-page');
 
- #Mojolicious::Lite
-
+#Mojolicious::Lite
   plugin 'cache-page';
 
 =head1 DESCRIPTION
@@ -136,10 +134,6 @@ html file that defered it creation until a new request comes in.
 
 =back
 
-=head1 NAME
-
-Mojolicious::Plugin::Cache::Page - Page caching plugin
-
 =head1 AUTHOR
 
 Siddhartha Basu <biosidd@gmail.com>
@@ -154,3 +148,5 @@ the same terms as the Perl 5 programming language system itself.
 =cut
 
 __END__
+
+# ABSTRACT: Page caching plugin

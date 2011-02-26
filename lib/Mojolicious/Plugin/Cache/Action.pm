@@ -1,7 +1,7 @@
 package Mojolicious::Plugin::Cache::Action;
 
 BEGIN {
-    $Mojolicious::Plugin::Cache::Action::VERSION = '0.0012';    # TRIAL
+    $Mojolicious::Plugin::Cache::Action::VERSION = '0.0013';
 }
 
 use strict;
@@ -100,20 +100,18 @@ sub register {
 
 =head1 NAME
 
-Mojolicious::Plugin::Cache::Action
+Mojolicious::Plugin::Cache::Action - Action caching plugins
 
 =head1 VERSION
 
-version 0.0012
+version 0.0013
 
 =head1 SYNOPSIS
 
 #Mojolicious
-
  $self->plugin('cache-action');
 
 #Mojolicious::Lite
-
   plugin 'cache-action';
 
 =head1 DESCRIPTION
@@ -126,7 +124,6 @@ controller body. Uncached responses are cached in an I<after_dispatch> hook.
 The cache is named according to the current host and path. So,  the cache will
 differentiate between an identical page that is accessed from B<tucker.myplace.com/user/2>
 and from B<caboose.myplace.com/user/2> 
-
 Different representation of the same resource such as B<tucker.myplace.com/book/list> and
 B<tucker.myplace.com/book/list.json> are considered as separate requests and so are
 cached separately.
@@ -197,10 +194,6 @@ are also available through CHI.
 
 =back
 
-=head1 NAME
-
-Mojolicious::Plugin::Cache::Action - Action caching plugin
-
 =head1 AUTHOR
 
 Siddhartha Basu <biosidd@gmail.com>
@@ -215,3 +208,5 @@ the same terms as the Perl 5 programming language system itself.
 =cut
 
 __END__
+
+# ABSTRACT: Action caching plugins
