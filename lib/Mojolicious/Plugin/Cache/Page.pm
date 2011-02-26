@@ -1,5 +1,6 @@
 package Mojolicious::Plugin::Cache::Page;
 
+
 use strict;
 use Carp;
 use File::Path qw/make_path/;
@@ -74,21 +75,14 @@ sub register {
 
 1;
 
-__END__
-
-=head1 NAME
-
-Mojolicious::Plugin::Cache::Page - Page caching plugin
-
+# ABSTRACT: Page caching plugin
 
 =head1 SYNOPSIS
 
- #Mojolicious
-
+#Mojolicious
  $self->plugin('cache-page');
 
- #Mojolicious::Lite
-
+#Mojolicious::Lite
   plugin 'cache-page';
 
 

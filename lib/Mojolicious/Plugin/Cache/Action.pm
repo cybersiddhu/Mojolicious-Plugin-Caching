@@ -94,20 +94,14 @@ sub register {
 
 1;
 
-__END__
-
-=head1 NAME
-
-Mojolicious::Plugin::Cache::Action - Action caching plugin
+# ABSTRACT: Action caching plugin
 
 =head1 SYNOPSIS
 
 #Mojolicious
-
  $self->plugin('cache-action');
 
 #Mojolicious::Lite
-
   plugin 'cache-action';
 
 
@@ -121,7 +115,6 @@ controller body. Uncached responses are cached in an I<after_dispatch> hook.
 The cache is named according to the current host and path. So,  the cache will
 differentiate between an identical page that is accessed from B<tucker.myplace.com/user/2>
 and from B<caboose.myplace.com/user/2> 
-
 Different representation of the same resource such as B<tucker.myplace.com/book/list> and
 B<tucker.myplace.com/book/list.json> are considered as separate requests and so are
 cached separately.

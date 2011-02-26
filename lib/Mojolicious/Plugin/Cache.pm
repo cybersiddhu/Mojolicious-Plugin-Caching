@@ -11,26 +11,19 @@ __END__
 
 =head1 SYNOPSIS
 
-# Action caching
+#Action caching
+  ## Mojolicious
+  $self->plugin('cache-action');
 
-## Mojolicious
+  ##Mojolicious::Lite
+  plugin 'cache-action';
 
-$self->plugin('cache-action');
+#Page caching
+ ## Mojolicious
+ $self->plugin('cache-page');
 
-## Mojolicious::Lite
-
-plugin 'cache-action';
-
-
-# Page caching
-
-## Mojolicious
-
-$self->plugin('cache-page');
-
-## Mojolicious::Lite
-
-plugin 'cache-page'
+##Mojolicious::Lite
+ plugin 'cache-page'
 	
 	
 
