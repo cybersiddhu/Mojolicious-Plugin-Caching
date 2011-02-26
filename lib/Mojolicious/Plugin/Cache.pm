@@ -8,6 +8,10 @@ BEGIN {
 #
 1;
 
+# ABSTRACT: Mojolicious plugin for caching
+
+__END__
+
 =pod
 
 =head1 NAME
@@ -20,19 +24,15 @@ version 0.0013
 
 =head1 SYNOPSIS
 
-#Action caching
-  ## Mojolicious
+Action caching:
+
+  plugin 'cache-action';
   $self->plugin('cache-action');
 
-  ##Mojolicious::Lite
-  plugin 'cache-action';
+Page caching:
 
-#Page caching
- ## Mojolicious
- $self->plugin('cache-page');
-
-##Mojolicious::Lite
  plugin 'cache-page'
+ $self->plugin('cache-page');
 
 =head1 DESCRIPTION
 
@@ -70,7 +70,3 @@ This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
 
 =cut
-
-__END__
-
-# ABSTRACT: Mojolicious plugin for caching
