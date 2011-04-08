@@ -124,29 +124,29 @@ cached separately.
 
 =head2 Cache backends 
 
-This plugin uses B<CHI> L<http://search.cpan.org/~jswartz/CHI> for caching responses.
+This plugin uses L<CHI|http://search.cpan.org/~jswartz/CHI> for caching responses.
 So,  all the various cache backends and customization options of B<CHI> are supported. By
-default,  this plugin uses the B<Memory>
-L<http://search.cpan.org/~jswartz/CHI-0.36/lib/CHI/Driver/Memory.pm> cache backend.
+default,  this plugin uses the 
+L<Memory|http://search.cpan.org/~jswartz/CHI-0.36/lib/CHI/Driver/Memory.pm> cache backend.
 Various other backends 
 
 =over
 
 =item *  
 
-L<http://search.cpan.org/~jswartz/CHI-0.36/lib/CHI/Driver/File.pm|File> 
+L<File|http://search.cpan.org/~jswartz/CHI-0.36/lib/CHI/Driver/File.pm> 
 
 =item *
 
-L<http://search.cpan.org/~jswartz/CHI-0.36/lib/CHI/Driver/FastMmap.pm|FastMmap>
+L<FastMmaphttp://search.cpan.org/~jswartz/CHI-0.36/lib/CHI/Driver/FastMmap.pm>
 
 =item *
 
-L<http://search.cpan.org/~jswartz/CHI-Driver-Memcached-0.12/lib/CHI/Driver/Memcached.pm|Memcached>
+L<Memcached|http://search.cpan.org/~jswartz/CHI-Driver-Memcached-0.12/lib/CHI/Driver/Memcached.pm>
 
 =item *
 
-L<http://search.cpan.org/~jswartz/CHI-Driver-BerkeleyDB-0.03/lib/CHI/Driver/BerkeleyDB.pm|BerkeleyDB>
+L<BerkleyDB|http://search.cpan.org/~jswartz/CHI-Driver-BerkeleyDB-0.03/lib/CHI/Driver/BerkeleyDB.pm>
 
 =back
 
@@ -161,7 +161,11 @@ are also available through CHI.
  actions => [qw/action1 action2 ....]
 
  #Mojolicious::Lite 
- plugin caching-actions => { cache_actions => [qw/user show/]}; 
+ plugin cache-action => { actions => [qw/user show/]}; 
+
+
+ #Mojolicious
+ $self->plugin('cache-action' => { actions => [qw/user show/]});
 
  By default,  all actions with successful GET requests will be cached
  
@@ -171,7 +175,7 @@ are also available through CHI.
   All CHI module options are recognized
 
   #Mojolicious lite using memcache 
-  plugin caching-actions => {
+  plugin cache-action => {
        options => {
        driver => 'Memcached',  
        servers => [ "10.0.0.15:11211",  "10.0.0.15:11212" ] 
@@ -179,12 +183,20 @@ are also available through CHI.
   } 
 
   #Mojolicious lite using file based storage
-  plugin caching-actions => {
+  plugin cache-action => {
        options => {
        driver => 'File',  
        root_dir => '/path/to/cache' 
      }
   } 
+
+  #Mojolicious using file based storage
+  $self->plugin('cache-action' => { options => 
+        { 
+          driver => 'File',  
+          root_dir => '/path/to/cache' 
+        }
+  });
 
 
 =back
