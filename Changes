@@ -1,7 +1,7 @@
 0.0014 04-08-2011
 
 - Added File::Path as dependency
-- Fixed typos in the pod for action-cache plugin.
+- Fixed typos in the pod of action-cache plugin.
 
 0.0013 02-25-2011
 
