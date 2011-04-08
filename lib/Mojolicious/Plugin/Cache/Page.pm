@@ -1,7 +1,7 @@
 package Mojolicious::Plugin::Cache::Page;
 
 BEGIN {
-    $Mojolicious::Plugin::Cache::Page::VERSION = '0.0013';
+    $Mojolicious::Plugin::Cache::Page::VERSION = '0.0014';
 }
 
 use strict;
@@ -90,7 +90,7 @@ Mojolicious::Plugin::Cache::Page - Page caching plugin
 
 =head1 VERSION
 
-version 0.0013
+version 0.0014
 
 =head1 SYNOPSIS
 

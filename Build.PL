@@ -17,13 +17,14 @@ my %module_build_args = (
     'Siddhartha Basu <biosidd@gmail.com>'
   ],
   'dist_name' => 'Mojolicious-Plugin-Cache',
-  'dist_version' => '0.0013',
+  'dist_version' => '0.0014',
   'license' => 'perl',
   'module_name' => 'Mojolicious::Plugin::Cache',
   'recommends' => {},
   'recursive_test_files' => 1,
   'requires' => {
     'CHI' => '0.36',
+    'File::Path' => '2.08',
     'Mojolicious' => '0.999926'
   },
   'script_files' => []
