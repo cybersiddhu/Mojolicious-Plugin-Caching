@@ -1,5 +1,8 @@
 {{$NEXT}}
 
+- Added File::Path as dependency
+- Fixed typos in the pod of action-cache plugin.
+
 0.0013 02-25-2011
 
 - First release

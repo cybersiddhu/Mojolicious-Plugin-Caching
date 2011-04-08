@@ -138,7 +138,7 @@ L<File|http://search.cpan.org/~jswartz/CHI-0.36/lib/CHI/Driver/File.pm>
 
 =item *
 
-L<FastMmaphttp://search.cpan.org/~jswartz/CHI-0.36/lib/CHI/Driver/FastMmap.pm>
+L<FastMmap|http://search.cpan.org/~jswartz/CHI-0.36/lib/CHI/Driver/FastMmap.pm>
 
 =item *
 
