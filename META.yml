@@ -16,7 +16,7 @@ name: Mojolicious-Plugin-Cache
 requires:
   CHI: 0.36
   File::Path: 2.08
-  Mojolicious: 0.999926
+  Mojolicious: 1.21
 resources:
   repository: git://github.com/cybersiddhu/Mojolicious-Plugin-Caching.git
-version: 0.0014
+version: 0.0015
