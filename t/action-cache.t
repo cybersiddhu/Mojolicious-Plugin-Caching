@@ -21,7 +21,7 @@ my $cache_dir = catdir( $tmp_dir, 'cache' );
 my $cache     = CHI->new( root_dir => $cache_dir, driver => 'File' );
 
 use_ok('Book');
-my $test = Test::Mojo->new( app => 'Book' );
+my $test = Test::Mojo->new('Book' );
 $test->get_ok('/books')->status_is(200)->content_is('books');
 my $base = 'http://localhost:'.$test->tx->remote_port;
 is( $cache->is_valid($base.'/books'), 1, 'it has cached /books url' );
@@ -31,7 +31,7 @@ isnt( $cache->is_valid($base.'/book'),
     1, 'it has not cached /book with 404 response code' );
 
 use_ok('User');
-$test = Test::Mojo->new( app => 'User' );
+$test = Test::Mojo->new ('User' );
 $test->get_ok('/user')->status_is(200)
     ->content_is( 'users', 'it matches the content from the get request' );
 $base = 'http://localhost:'.$test->tx->remote_port;
