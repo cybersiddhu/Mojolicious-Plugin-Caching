@@ -1,0 +1,9 @@
+language: perl
+perl:
+ - "5.10"
+ - "5.12"
+script: "dzil test"
+install: "dzil listdeps | cpanm -n"
+before_install:
+ - "cpanm -n Dist::Zilla"
+ - "dzil authordeps | cpanm -n"
