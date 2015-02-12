@@ -64,10 +64,7 @@ sub register {
             $app->log->debug(
                 "storing in cache for action **$name** in file $file_name");
 
-            my $handler = IO::File->new( $file_name, 'w' )
-                or croak "cannot create file:$!";
-            $handler->print( $c->res->body );
-            $handler->close;
+            $c->res->content->asset->move_to( $file_name );
         }
     );
     return;
