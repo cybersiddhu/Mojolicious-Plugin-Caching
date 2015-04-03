@@ -11,7 +11,7 @@ use base qw/Mojolicious::Controller/;
 
 sub books {
 	my $self = shift;
-	$self->render_text('books');
+	$self->render(text => 'books');
 }
 
 1;    # Magic true value required at end of module
