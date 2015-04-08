@@ -14,9 +14,11 @@ sub startup {
 
     $self->plugin('cache-page');
 
-    my $product = $r->waypoint('/product')->via('get')->to('default#list');
-    my $type = $product->waypoint('/:type')->via('get')->to('default#type');
-    $type->route('/:id')->via('get')->to('default#show');
+    my $product = $r->route('/product');
+    $product->get('/')->to('default#list');
+    my $type = $product->route('/:type');
+    $type->get('/')->to('default#type');
+    $type->get('/:id')->to('default#show');
 
 }
 
