@@ -49,6 +49,7 @@ sub register {
                 $c->res->headers( $data->{headers} );
                 $c->res->body( $data->{body} );
                 $c->stash( 'from_cache' => 1 );
+                $c->rendered;
             }
         }
     );
