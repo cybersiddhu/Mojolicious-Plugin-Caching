@@ -7,7 +7,7 @@ use strict;
 
 sub dummy {
 	my $self = shift;
-	$self->render_text($self->stash('cached_data'));
+	$self->rende(text => $self->stash('cached_data'));
 }
 
 # Module implementation

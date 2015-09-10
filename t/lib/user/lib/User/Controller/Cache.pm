@@ -11,32 +11,32 @@ use base qw/Mojolicious::Controller/;
 
 sub users {
 	my $self = shift;
-	$self->render_text('users');
+	$self->render(text => 'users');
 }
 
 sub show {
 	my $self = shift;
-	$self->render_text('showing '. $self->stash('id'));
+	$self->render(text => 'showing '. $self->stash('id'));
 }
 
 sub email {
 	my $self = shift;
-	$self->render_text('email '. $self->stash('id'));
+	$self->render(text => 'email '. $self->stash('id'));
 }
 
 sub name {
 	my $self = shift;
-	$self->render_text('name '. $self->stash('id'));
+	$self->render(text => 'name '. $self->stash('id'));
 }
 
 sub add {
 	my $self = shift;
-	$self->render_text('added '. $self->param('id'));
+	$self->render(text => 'added '. $self->param('id'));
 }
 
 sub remove_user {
 	my $self = shift;
-	$self->render_text('deleted '. $self->stash('id'));
+	$self->render(text => 'deleted '. $self->stash('id'));
 }
 
 

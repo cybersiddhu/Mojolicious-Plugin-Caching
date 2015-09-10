@@ -39,7 +39,7 @@ is( $cache->is_valid($base.'/user'), 1, 'it has cached /user url' );
 
 #remove the cache now to test the other responses
 $cache->remove($base.'/user');
-$test->post_form_ok( '/user' => { id => 23 } )->status_is(200)
+$test->post_ok( '/user' => form => { id => 23 } )->status_is(200)
     ->content_is( 'added 23', 'it made a successful post request' );
 isnt( $cache->is_valid($base.'/user'),
     1, 'it does not cache response from post request' );
